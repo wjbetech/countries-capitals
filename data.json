@@ -1,26 +1,9 @@
 [
   {
-    "country": "Germany",
-    "capitalCity": "Berlin"
-  },
-  {
-    "country": "England",
-    "capitalCity": "London"
-  },
-  {
-    "country": "France",
-    "capitalCity": "Paris"
-  },
-  {
-    "country": "Portugal",
-    "capitalCity": "Lisbon"
-  },
-  {
-    "country": "South Korea",
-    "capitalCity": "Seoul"
-  },
-  {
-    "country": "Japan",
-    "capitalCity": "Tokyo"
+    "Germany": "Berlin",
+    "France": "Paris",
+    "Portugal": "Lisbon",
+    "Korea": "Seoul",
+    "Japan": "Tokyo"
   }
 ]

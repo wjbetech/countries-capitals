@@ -1,19 +1,32 @@
 import React from 'react'
 import NavBar from "./component/NavBar"
-import data from "../data.json"
 
-const App = () => {
+function GameButtons({ data }) {
 
-  console.log(data.reduce((d) => d.capitalCity))
+  const countries = Object.keys(data)
+  const capitals = Object.values(data)
+  const options = [...countries, ...capitals]
+  console.log(options)
 
   return (
-    <div className="App">
-      <NavBar />
-      {data.map(d => (
-        <div></div>
+    <div>
+      {options.map((o) => (
+        <button className="btn btn-accent btn-sm" key={o}>{o}</button>
       ))}
     </div>
   )
 }
 
-export default App
+
+const App = () => {
+  return (
+    <div className="App">
+      <NavBar />
+      <div className="w-full gap-4 m-auto p-4 grid sm:grid-cols-2 lg:grid-cols-4">
+        <GameButtons data={{ Germany: "Berlin", France: "Paris" }} />
+      </div>
+    </div>
+  )
+}
+
+export default App;
