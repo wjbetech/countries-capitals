@@ -22,3 +22,15 @@ a {
 ul, li {
   list-style: none;
 }
+
+.selected {
+  background-color: red;
+  color: white;
+  opacity: 50%;
+}
+
+.selected:hover {
+  background-color: red;
+  color: white;
+  opacity: 50%;
+}

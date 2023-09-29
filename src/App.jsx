@@ -1,29 +1,28 @@
 import React from 'react'
+import { useState } from "react"
 import NavBar from "./component/NavBar"
-
-function GameButtons({ data }) {
-
-  const countries = Object.keys(data)
-  const capitals = Object.values(data)
-  const options = [...countries, ...capitals]
-  console.log(options)
-
-  return (
-    <div>
-      {options.map((o) => (
-        <button className="btn btn-accent btn-sm" key={o}>{o}</button>
-      ))}
-    </div>
-  )
-}
-
+import GameButtons from "./component/GameButtons"
 
 const App = () => {
+
+  // state setters
+  const [selected, setSelected] = useState([]);
+  const [completed, setCompleted] = useState([]);
+
+  // functions
+  const handleClick = (item) => {
+    if (selected.length < 2) {
+      setSelected([...selected, item.target.value]);
+    } else {
+      setSelected([item.target.value])
+    }
+  }
+
   return (
     <div className="App">
       <NavBar />
-      <div className="w-full gap-4 m-auto p-4 grid sm:grid-cols-2 lg:grid-cols-4">
-        <GameButtons data={{ Germany: "Berlin", France: "Paris" }} />
+      <div className="p-4 m-auto">
+        <GameButtons selected={selected} handleClick={handleClick} data={{ Germany: "Berlin", France: "Paris", Portugal: "Lisbon", Korea: "Seoul", Japan: "Tokyo" }} />
       </div>
     </div>
   )
